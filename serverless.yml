@@ -6,7 +6,13 @@ provider:
 
 functions:
   hello:
-    handler: handler.hello
+    name: "pzPraiser/main"
+    handler: handler.main
+  pzPraiserSeq:
+    name: "pzPraiser/praiserSeq"
+    sequence:
+      - /_/pzPraiser/main
+      - /_/wskCommon/post
 
 plugins:
   - serverless-openwhisk
