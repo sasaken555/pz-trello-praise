@@ -1,7 +1,7 @@
 {
   "name": "pz-trello-praise",
   "version": "1.0.0",
-  "description": "Sample OpenWhisk NodeJS serverless framework service.",
+  "description": "Praise your success from Trello.",
   "main": "handler.js",
   "keywords": [
     "serverless",
