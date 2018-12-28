@@ -1,0 +1,12 @@
+service: pz-trello-praise
+
+provider:
+  name: openwhisk
+  runtime: nodejs:10
+
+functions:
+  hello:
+    handler: handler.hello
+
+plugins:
+  - serverless-openwhisk
