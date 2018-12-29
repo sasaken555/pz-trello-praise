@@ -4,6 +4,7 @@ echo ">>> Deploy Started..."
 echo ">>> LogIn to IBM Cloud...."
 ibmcloud --version
 ibmcloud login --apikey $API_KEY -a api.ng.bluemix.net -o "$ORG" -s "$SPACE"
+ibmcloud fn property get --auth
 
 echo ">>> Install Serverless packages globally..."
 npm install -g serverless serverless-openwhisk
