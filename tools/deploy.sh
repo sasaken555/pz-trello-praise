@@ -9,6 +9,7 @@ echo ">>> Install Serverless packages globally..."
 npm install -g serverless serverless-openwhisk
 
 echo ">>> Deploy functions/resources via Serverless..."
+npm list -g --depth=0 | grep "serverless"
 serverless deploy -v
 
 echo ">>> Deploy functions/resources Successfully!!"
