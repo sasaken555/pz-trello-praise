@@ -6,7 +6,7 @@ const qs = require("querystring");
 /**
  * Trelloのカードを操作する.
  */
-export default class TrelloClient {
+class TrelloClient {
   constructor(params) {
     this.baseUrl = params.TRELLO_URL || "https://api.trello.com/1";
     this.apiKey = params.TRELLO_API_KEY || "API KEY";
@@ -32,3 +32,5 @@ export default class TrelloClient {
     });
   }
 }
+
+module.exports = TrelloClient;

@@ -1,6 +1,6 @@
 ("use strict");
 
-import TrelloClient from "./TrelloClient";
+const TrelloClient = require("./TrelloClient");
 
 /**
  * 実行エントリーポイント
