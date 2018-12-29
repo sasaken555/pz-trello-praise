@@ -1,9 +1,6 @@
 #!/bin/bash
 echo ">>> Build Started..."
 
-echo ">>> Install dependencies..."
-npm install
-
 # Replace parameters with environment variables
 #区切り文字'/'だとURLの中で区切られてしまうため, URLを含む場合は区切り文字を'|'にする
 echo ">>> Replace parameters..."

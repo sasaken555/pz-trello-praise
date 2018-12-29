@@ -8,6 +8,9 @@ ibmcloud login --apikey $API_KEY -a api.ng.bluemix.net -o "$ORG" -s "$SPACE"
 echo ">>> Install Serverless packages globally..."
 npm install -g serverless serverless-openwhisk
 
+echo ">>> Install dependencies..."
+npm install
+
 echo ">>> Deploy functions/resources via Serverless..."
 npm list -g --depth=0 | grep "serverless"
 serverless deploy -v
