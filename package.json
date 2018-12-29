@@ -5,7 +5,8 @@
   "private": true,
   "main": "handler.js",
   "scripts": {
-    "deploy": "bash deploy.sh"
+    "build": "bash tools/build.sh",
+    "deploy": "bash tools/deploy.sh"
   },
   "keywords": [
     "serverless",
