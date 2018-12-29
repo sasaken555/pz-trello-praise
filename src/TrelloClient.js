@@ -9,10 +9,8 @@ const qs = require("querystring");
 export default class TrelloClient {
   constructor(params) {
     this.baseUrl = params.TRELLO_URL || "https://api.trello.com/1";
-    this.apiKey = params.TRELLO_API_KEY || "eb55e1ecb866812369556237f37b8b75";
-    this.token =
-      params.TRELLO_TOKEN ||
-      "f3f17fa1292cffd861424a672f3cfa976c70502a187ecc4b18986786d6353b2b";
+    this.apiKey = params.TRELLO_API_KEY || "API KEY";
+    this.token = params.TRELLO_TOKEN || "TOKEN";
   }
 
   /**
