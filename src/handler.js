@@ -7,6 +7,7 @@ const TrelloClient = require("./TrelloClient");
  * @param {String} params.TRELLO_URL TrelloのベースURL
  * @param {String} params.TRELLO_API_KEY TrelloのAPI Key
  * @param {String} params.TRELLO_TOKEN Trelloの認証トークン
+ * @param {String} params.TRELLO_LIST TrelloのリストID
  */
 function main(params) {
   return new Promise((resolve, reject) => {
