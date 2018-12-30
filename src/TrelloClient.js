@@ -23,7 +23,7 @@ class TrelloClient {
     const reqParams = qs.stringify({
       key: this.apiKey,
       token: this.token,
-      fields: "id,name,dateLastActivity,due,dueComplete"
+      fields: "id,name,labels"
     });
     const TRELLO_URL_GET_COMPLETED_TASKS = `${this.baseUrl}/lists/${
       this.listId
