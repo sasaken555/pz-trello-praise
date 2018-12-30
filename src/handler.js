@@ -16,17 +16,18 @@ function main(params) {
     const trelloClient = new TrelloClient(params);
     trelloClient
       .getCompletedTasks()
-      .then(response => {
-        // 結果のリストから件数算出
-        const completedNum = response.length || 0;
-        resolve({ text: `Number of Completed Tasks : ${completedNum}` });
-      })
+      .then(tasks => resolve(createResponse(tasks)))
       .catch(err => {
         console.log(err);
       });
   });
 }
 
+/**
+ * レスポンスを生成する.
+ * @param {Array} tasks Trelloの完了済みタスク配列
+ * @returns {Object} レスポンスオブジェクト
+ */
 function createResponse(tasks) {
   let responseText = "";
   // 全体件数
@@ -37,12 +38,12 @@ function createResponse(tasks) {
   // ラベルごと件数
   // カードの重複含むラベルごと件数の総和は全体件数と一致しない
   const labels = helper.summarizeLabels(tasks);
-  if (labels.length !== 0) {
+  if (labels.length > 0) {
     responseText += `\n*[Labels]*`;
+    labels.map(label => {
+      responseText += `\n> ${label.name} : ${label.count}tasks`;
+    });
   }
-  labels.map(label => {
-    responseText += `\n> ${label.name} : ${label.count}tasks`;
-  });
 
   return { text: responseText };
 }
