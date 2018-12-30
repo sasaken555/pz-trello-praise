@@ -6,7 +6,8 @@
   "main": "handler.js",
   "scripts": {
     "build": "bash tools/build.sh",
-    "deploy": "bash tools/deploy.sh"
+    "deploy": "bash tools/deploy.sh",
+    "test": "jest"
   },
   "engines": {
     "node": ">=8.14.0",
@@ -17,6 +18,7 @@
     "openwhisk"
   ],
   "devDependencies": {
+    "jest": "^23.6.0",
     "serverless-openwhisk": ">=0.13.0"
   },
   "dependencies": {
