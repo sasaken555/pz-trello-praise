@@ -33,7 +33,7 @@ function createResponse(tasks) {
   // 全体件数
   responseText += "Good Job!! Here is your completed tasks in this week.";
   responseText += `\n*[Total]*`;
-  responseText += `Number of Completed Tasks : ${tasks.length || 0}`;
+  responseText += `\n> Number of Completed Tasks : ${tasks.length || 0}`;
 
   // ラベルごと件数
   // カードの重複含むラベルごと件数の総和は全体件数と一致しない
