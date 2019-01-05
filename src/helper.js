@@ -1,3 +1,18 @@
+const _ = require("lodash");
+
+/**
+ * 名称ごとの出現数を集計する.
+ * @param {Object} stat 集計値
+ * @param {String} name 集計キー ... 配列内の個々の値が入る
+ */
+const gatherNames = (stat, name) => {
+  if (_.isUndefined(stat[name])) {
+    stat[name] = { name: name, count: 0 };
+  }
+  stat[name].count++;
+  return stat;
+};
+
 /**
  * Trelloカードのラベル/件数サマリーを導出する.
  * @param {Array} cards Trelloカードの配列
@@ -6,19 +21,12 @@
  */
 function summarizeLabels(cards) {
   // 全てのラベルを重複込みで配列に入れる
-  let labelLists = [];
-  cards.map(card => {
-    card.labels.forEach(label => labelLists.push(label.name));
-  });
-  // 配列内のラベル一覧を重複削除で取り出す
-  const labelSet = new Set(labelLists);
-  // ラベルごとの件数を配列とラベル一覧から導出
-  let labelResults = [];
-  for (let targetLabel of labelSet) {
-    const labelCount =
-      labelLists.filter(cardLabel => cardLabel == targetLabel).length || 0;
-    labelResults.push({ name: targetLabel, count: labelCount });
-  }
+  let labelResults = _.chain(cards)
+    .flatMap(_.property("labels")) // ... (1)
+    .map(label => label.name)
+    .reduce(gatherNames, {}) // ... (2)/(3)
+    .values()
+    .value(); // ... これを呼び出して初めて上記の関数チェーンが実行される
   return labelResults;
 }
 
