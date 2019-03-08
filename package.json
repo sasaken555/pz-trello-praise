@@ -18,8 +18,8 @@
     "openwhisk"
   ],
   "devDependencies": {
-    "jest": "^23.6.0",
-    "serverless-openwhisk": ">=0.13.0"
+    "jest": "^24.3.1",
+    "serverless-openwhisk": "^0.18.3"
   },
   "dependencies": {
     "axios": "^0.18.0",
