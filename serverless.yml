@@ -9,10 +9,10 @@ functions:
     name: "pzPraiser/main"
     handler: src/handler.main
     parameters:
-      TRELLO_URL: @TRELLO_URL@
-      TRELLO_API_KEY: @TRELLO_API_KEY@
-      TRELLO_TOKEN: @TRELLO_TOKEN@
-      TRELLO_LIST: @TRELLO_LIST@
+      TRELLO_URL: TRELLO_URL
+      TRELLO_API_KEY: TRELLO_API_KEY
+      TRELLO_TOKEN: TRELLO_TOKEN
+      TRELLO_LIST: TRELLO_LIST
   pzPraiserSeq:
     name: "pzPraiser/praiserSeq"
     sequence:
@@ -29,6 +29,6 @@ resources:
     wskCommon:
       binding: /whisk.system/slack
       parameters:
-        url: @SLACK_WEBHOOK_URL@
-        username: @SLACK_APP_USER@
-        channel: @SLACK_CHANNEL@
+        url: SLACK_WEBHOOK_URL
+        username: SLACK_APP_USER
+        channel: SLACK_CHANNEL
